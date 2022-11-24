@@ -13,7 +13,7 @@ int _printf(const char *format, ...){
     if (format[i] == '%'){
       if(format[i+1] != '%'){
 	conCounter += 1;
-	size = conv_handler(format[i+1], conCounter-1, list);
+	size += conv_handler(format[i+1], conCounter-1, list);
 	i += 1;
       }else{
 	_putchar('%');
@@ -23,8 +23,7 @@ int _printf(const char *format, ...){
         
     }else{
       _putchar(format[i]);
-      size++;
-     
+      size++;     
    }
   }
   va_end(list);
