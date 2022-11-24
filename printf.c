@@ -18,6 +18,7 @@ int _printf(const char *format, ...){
       }else{
 	_putchar('%');
 	i += 1;
+	size++;
 	continue;
       }
         
