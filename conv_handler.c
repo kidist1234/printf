@@ -45,7 +45,7 @@ int StringrPrint(int char_index, va_list list){
       
       for(j = 0; str && str[j] != '\0';j++){
 	size += 1;
-	_putchar(str[i]);
+	_putchar(str[j]);
       }
     }
   }
