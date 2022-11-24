@@ -21,12 +21,10 @@ int _printf(const char *format, ...){
 	continue;
       }
         
-    }else if(i > 0){
-      if(format[i - 1] != '%'){
+    }else{
       _putchar(format[i]);
       size++;
-      
-    }
+     
    }
   }
   va_end(list);
