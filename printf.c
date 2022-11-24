@@ -14,16 +14,20 @@ int _printf(const char *format, ...){
       if(format[i+1] != '%'){
 	conCounter += 1;
 	size = conv_handler(format[i+1], conCounter-1, list);
+	i += 1;
       }else{
 	_putchar('%');
 	i += 1;
 	continue;
       }
         
-    }else{
+    }else if(i > 0){
+      if(format[i - 1] != '%'){
       _putchar(format[i]);
       size++;
+      
     }
+   }
   }
   va_end(list);
   return (size);
