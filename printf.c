@@ -22,7 +22,8 @@ int _printf(const char *format, ...){
 	continue;
       }
         
-    }else{
+    }
+    else{
       _putchar(format[i]);
       size++;     
    }

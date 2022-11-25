@@ -10,8 +10,9 @@ int conv_handler(char c, int char_index, va_list list){
     charPrint(char_index, list);
     size = 1;
   }
-  else if(c == 's')
+  else if(c == 's'){
     size = StringrPrint(char_index, list);
+  }
   return (size);
 }
 
