@@ -14,13 +14,17 @@ int StringrPrint(int char_index, va_list list);
 int conv_handler(char c, int char_index, va_list list)
 {
 int size = 0;
-if (c == 'c')
+
+ if (c == 'c')
 {
 size = charPrint(char_index, list);
 }
 else if (c == 's')
 size = StringrPrint(char_index, list);
-return (size);
+ else {
+   return (-1);
+ }
+ return (size);
 }
 int charPrint(int char_index, va_list list)
 {

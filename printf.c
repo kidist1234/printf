@@ -16,8 +16,13 @@ int _printf(const char *format, ...){
         return (size);
       }
       if(format[i+1] != '%'){
+	int conv_size;
 	conCounter += 1;
-	size += conv_handler(format[i+1], conCounter-1, list);
+	conv_size = conv_handler(format[i+1], conCounter-1, list);
+	if(conv_size < 0)
+          return (-1);
+	size += conv_size;
+       
 	i += 1;
       }
       else{
