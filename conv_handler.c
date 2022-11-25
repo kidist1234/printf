@@ -1,11 +1,11 @@
 #include "main.h"
 /**
  * conv_handler - function that returns @size
- * @c: character
  * @char_index: intiger
  * @list: va_list
  *
- * return: return the size @size
+ * Return: return the size @size
+ * otherwise -1
  */
 
 int charPrint(int char_index, va_list list);
@@ -58,11 +58,25 @@ return (-1);
 }
 return (size);
 }
+
+
+/**
+ * charPrint - prints only one character
+ * Description: it prints the only character that is passed to the function
+ * Return: returns 1 if it can print the char
+ *         otherwise -1
+ * @list: list of argument
+ * @char_index: chracter index
+ */
+
+
+
+
 int charPrint(int char_index, va_list list)
 {
 int i;
 if (char_index < 0)
-return (-1);
+	return (-1);
 
 /*va_start(list, format); */
 for (i = 0; i <= char_index + 1; i++)
@@ -75,6 +89,17 @@ for (i = 0; i <= char_index + 1; i++)
 /*va_end(list); */
 return (1);
 }
+
+/**
+ * StringrPrint - prints string
+ * Return: returns size when it can print the strring
+ *         otherwise -1
+ * @list: the list of the arguments
+ * @char_index: character index
+ */
+
+
+
 
 int StringrPrint(int char_index, va_list list)
 {
@@ -104,7 +129,7 @@ if (i == char_index)
 
 str = va_arg(list, char *);
 for (j = 0; str && str[j] != '\0'; j++)
-{ 
+{
 size += 1;
 _putchar(str[j]);
 }
