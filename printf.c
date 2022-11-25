@@ -11,11 +11,16 @@ int _printf(const char *format, ...){
     return(-1);
   for(i = 0; format && format[i] != '\0'; i++){
     if (format[i] == '%'){
+      if(format[i+1] == '\0'){
+        size = 0;
+        return (size);
+      }
       if(format[i+1] != '%'){
 	conCounter += 1;
 	size += conv_handler(format[i+1], conCounter-1, list);
 	i += 1;
-      }else{
+      }
+      else{
 	_putchar('%');
 	i += 1;
 	size++;
