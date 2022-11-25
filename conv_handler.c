@@ -11,23 +11,6 @@
 int charPrint(int char_index, va_list list);
 int StringrPrint(int char_index, va_list list);
 
-/*<<<<<<< HEAD*/
-int conv_handler(char c, int char_index, va_list list)
-{
-	int size = 0;
-
-	if (c == 'c')
-	{
-		charPrint(char_index, list);
-		size = 1;
-	}
-	else if (c == 's')
-	{
-		size = StringrPrint(char_index, list);
-	}
-	return (size);
-/*=======*/
-
 int conv_handler(char c, int char_index, va_list list)
 {
 int size = 0;
