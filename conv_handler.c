@@ -46,7 +46,7 @@ int size = 0;
 char *str;
 int i;
 int j;
- int k;
+
 if (char_index < 0)
 return (-1);
 
@@ -55,18 +55,19 @@ for (i = 0; i <= char_index + 1; i++)
 {
 if (i == char_index)
 {
-  if(!va_arg(list, int)){
+  /** if(!va_arg(list, int)){
+    
     char *nullStr = "(null)";
+    printf("is on null statment");
     for(k = 0; k < 6; k++){
       _putchar(nullStr[k]);
     }
     return (6);
-  }
-      
+  } */
+     
 str = va_arg(list, char *);
-for (j = 0; str && str[j] != '\0'; j++)
-{
-  
+ for (j = 0; str && str[j] != '\0'; j++)
+{  
 size += 1;
 _putchar(str[j]);
 }
