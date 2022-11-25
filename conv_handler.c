@@ -33,9 +33,6 @@ for (i = 0; i <= char_index + 1; i++)
 {
 if (i == char_index)
 {
-  if(!va_arg(list, int))
-    return (0);
-  else
     _putchar(va_arg(list, int));
 }
 }
