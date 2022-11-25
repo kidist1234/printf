@@ -14,14 +14,23 @@ int StringrPrint(int char_index, va_list list);
 int conv_handler(char c, int char_index, va_list list)
 {
 int size = 0;
-
+ /* int i; */
  if (c == 'c')
 {
 size = charPrint(char_index, list);
 }
-else if (c == 's')
-size = StringrPrint(char_index, list);
+ else if (c == 's'){
+   size = StringrPrint(char_index, list);
+ }
  else {
+   /** char *str  = va_arg(list, char *);
+   int sizeStr = 0; 
+   printf("%s", str);
+   _putchar('%');
+   for(i = 0; str && str[i] != '\0'; i++){
+     _putchar(str[i]);
+     size = i;
+   } */
    return (-1);
  }
  return (size);

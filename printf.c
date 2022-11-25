@@ -19,11 +19,13 @@ int _printf(const char *format, ...){
 	int conv_size;
 	conCounter += 1;
 	conv_size = conv_handler(format[i+1], conCounter-1, list);
-	if(conv_size < 0)
-          return (-1);
-	size += conv_size;
-       
-	i += 1;
+	if(conv_size < 0){
+	  _putchar('%');
+	  size += 1;
+	}else{
+	  size += conv_size;
+        i += 1;
+	}
       }
       else{
 	_putchar('%');
